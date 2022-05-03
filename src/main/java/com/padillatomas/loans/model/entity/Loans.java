@@ -14,10 +14,10 @@ public class Loans {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "loan_number")
-    private int loanNumber;
+    private Long loanNumber;
 
     @Column(name = "customer_id")
-    private int customerId;
+    private Long customerId;
 
     @Column(name="start_dt")
     private Date startDt;
