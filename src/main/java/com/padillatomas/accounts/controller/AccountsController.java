@@ -1,6 +1,7 @@
 package com.padillatomas.accounts.controller;
 
 import com.padillatomas.accounts.model.entity.Accounts;
+import com.padillatomas.accounts.model.entity.Customer;
 import com.padillatomas.accounts.repository.AccountsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
