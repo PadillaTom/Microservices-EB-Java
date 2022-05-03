@@ -28,7 +28,7 @@ public class Cards {
     @Column(name = "total_limit")
     private int totalLimit;
 
-    @Column(name = "acmount_used")
+    @Column(name = "amount_used")
     private int amountUsed;
 
     @Column(name = "available_amount")
