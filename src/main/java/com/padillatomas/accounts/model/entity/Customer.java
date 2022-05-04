@@ -1,14 +1,12 @@
 package com.padillatomas.accounts.model.entity;
 
 import lombok.Data;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Data
-@ToString
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

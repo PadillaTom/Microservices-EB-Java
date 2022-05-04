@@ -1,7 +1,6 @@
 package com.padillatomas.accounts.model.entity;
 
 import lombok.Data;
-import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +9,6 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-@ToString
 public class Accounts {
 
     @Column(name= "account_number")
