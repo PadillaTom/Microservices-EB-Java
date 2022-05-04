@@ -10,6 +10,7 @@ import com.padillatomas.accounts.model.entity.Customer;
 import com.padillatomas.accounts.repository.AccountsRepository;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,18 +22,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountsController {
 
     private final AccountsRepository accountsRepository;
-    private final AccountsServiceConfig accountsServiceConfig;
+
+    @Autowired
+    AccountsServiceConfig accountsServiceConfig;
 
 //    === GET Properties ===
     @GetMapping("/accounts/properties")
     public String getPropertyDetails() throws JsonProcessingException {
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        System.out.println(accountsServiceConfig);
         Properties properties = new Properties(
                 accountsServiceConfig.getMsg(),
                 accountsServiceConfig.getBuildVersion(),
                 accountsServiceConfig.getMailDetails(),
                 accountsServiceConfig.getActiveBranches()
         );
+
         String jsonStr = ow.writeValueAsString(properties);
         return jsonStr;
     }
