@@ -27,7 +27,7 @@ public class LoansController {
     LoansServiceConfig loansServiceConfig;
 
     //    === GET Properties ===
-    @GetMapping("/accounts/properties")
+    @GetMapping("/loans/properties")
     public String getPropertyDetails() throws JsonProcessingException {
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         System.out.println(loansServiceConfig);
