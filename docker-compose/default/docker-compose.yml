@@ -1,0 +1,81 @@
+version: "3.8"
+
+services:
+
+  configserver:
+    image: padillatom/configserver:latest
+    ports:
+      - "8071:8071"
+    networks:
+      - padillatom
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+  accounts:
+    image: padillatom/accounts:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - padillatom
+    depends_on:
+      - configserver
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+      restart_policy:
+        condition: on-failure
+        delay: 25s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+
+  loans:
+    image: padillatom/loans:latest
+    ports:
+      - "8090:8090"
+    networks:
+      - padillatom
+    depends_on:
+      - configserver
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+      restart_policy:
+        condition: on-failure
+        delay: 25s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+
+  cards:
+    image: padillatom/cards:latest
+    ports:
+      - "9000:9000"
+    networks:
+      - padillatom
+    depends_on:
+      - configserver
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+      restart_policy:
+        condition: on-failure
+        delay: 25s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+
+
+networks:
+  padillatom:
