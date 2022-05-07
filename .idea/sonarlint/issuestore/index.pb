@@ -1,3 +1,19 @@
 
 z
 Jsrc/main/java/com/padillatomas/accounts/repository/AccountsRepository.java,8/3/8394b73675a5816471b7f665f80275794fee9722
+o
+?src/main/java/com/padillatomas/accounts/model/entity/Cards.java,b/8/b8533dfdfba0ad1a7c7e3a5e6147129dffe35e4c
+o
+?src/main/java/com/padillatomas/accounts/model/entity/Loans.java,1/d/1d738f36d8cc9e9dff3716688644bca89319b5ef
+t
+Dsrc/main/java/com/padillatomas/accounts/client/CardsFeignClient.java,c/7/c7fa30662a95e179825638a40b979e53002752e9
+t
+Dsrc/main/java/com/padillatomas/accounts/client/LoansFeignClient.java,b/7/b7912c7f9a39723834b9b7c06c4b454d863c2aa4
+y
+Isrc/main/java/com/padillatomas/accounts/model/entity/CustomerDetails.java,6/b/6b6469d97452c39d4375f533da0e4d1d65db405b
+z
+Jsrc/main/java/com/padillatomas/accounts/controller/AccountsController.java,2/9/2916eba80823d6437f9c9502385713c5a8557ee8
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+p
+@src/main/java/com/padillatomas/accounts/AccountsApplication.java,0/9/097c39df184ef828f8d1174d6a4f0eeb979902d5
